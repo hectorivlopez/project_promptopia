@@ -1,7 +1,7 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
-export default GET = async (req) => {
+const GET = async (req) => {
 	try {
 		await connectToDB();
 
@@ -13,3 +13,5 @@ export default GET = async (req) => {
 		return new Response('Failed to fetch user prompts', { status: 500 });
 	}
 }
+
+export default GET;
