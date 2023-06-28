@@ -106,6 +106,9 @@ const Feed = () => {
 					className="search_input peer"
 				/>
 			</form>
+			{posts.map(pos => (
+				<h1>{pos.creator.username}</h1>
+			))}
 
 			<PromptCardList
 				data={feedPosts}
