@@ -32,6 +32,7 @@ const Feed = () => {
 
 			setPosts(data);
 			setFeedPosts(data)
+			console.log('Primer useEffect: ', data)
 		}
 
 		fetchPosts();
@@ -59,6 +60,8 @@ const Feed = () => {
 			setTags(postsTags);
 		}
 		getTags();
+
+		console.log('Segundo useEffect: ', posts)
 	}, [posts])
 
 	const searchPosts = (target) => {
@@ -106,9 +109,6 @@ const Feed = () => {
 					className="search_input peer"
 				/>
 			</form>
-			{posts.map(pos => (
-				<h1>{pos.creator.username}</h1>
-			))}
 
 			<PromptCardList
 				data={feedPosts}
