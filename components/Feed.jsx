@@ -38,31 +38,7 @@ const Feed = () => {
 		fetchPosts();
 	}, []);
 
-	useEffect(() => {
-		const getUsernames = () => {
-			let postsUsernames = []
-			for (let post of posts) {
-				if (!postsUsernames.includes(post.creator.username)) {
-					postsUsernames.push(post.creator.username);
-				}
-			}
-			setUsernames(postsUsernames);
-		}
-		getUsernames();
 
-		const getTags = () => {
-			let postsTags = []
-			for (let post of posts) {
-				if (!postsTags.includes(post.tag)) {
-					postsTags.push(post.tag);
-				}
-			}
-			setTags(postsTags);
-		}
-		getTags();
-
-		console.log('Segundo useEffect: ', posts)
-	}, [posts])
 
 	const searchPosts = (target) => {
 		if (target === '') {
