@@ -27,11 +27,11 @@ const Feed = () => {
 
 	useEffect(() => {
 		const fetchPosts = async () => {
-			const response = await fetch('/api/cosa');
+			const response = await fetch('/api/prompt');
 			const data = await response.json();
 
 			setPosts(data);
-			setFeedPosts(data);
+			setFeedPosts(data)
 			console.log('Primer useEffect: ', data)
 		}
 
